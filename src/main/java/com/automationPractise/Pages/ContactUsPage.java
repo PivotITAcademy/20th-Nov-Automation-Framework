@@ -6,11 +6,13 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
 import com.automationPractise.BasePackage.TestBase;
+import com.automationPractise.Utils.Utils;
 
 public class ContactUsPage extends TestBase {
 
 	ContactUsPage() {
 		PageFactory.initElements(wd, this);
+		waitForDocumentCompleteState(5);
 	}
 
 	@FindBy(id = "email")
@@ -27,8 +29,8 @@ public class ContactUsPage extends TestBase {
 
 	@FindBy(css = ".alert.alert-success")
 	WebElement successMessage;
-	
-	@FindBy(id="submitMessage")
+
+	@FindBy(id = "submitMessage")
 	WebElement clickSubmitBtn;
 
 	public void sendEmailInput(String email) {
@@ -44,17 +46,22 @@ public class ContactUsPage extends TestBase {
 	}
 
 	public void selectSubjectHeading() {
-		Select select = new Select(subjectHeading);
-		select.selectByIndex(1);
+		Utils.selectFromDropDownUsingIndex(subjectHeading, 15);
+
 	}
 
 	public String getTextFromSuccessMessage() {
 		return successMessage.getText();
 	}
-	
+
 	public ContactUsPage clickContactBtn() {
-		clickSubmitBtn.click();
+		// clickSubmitBtn.click();
+		Utils.clickOnElement(clickSubmitBtn);
 		return new ContactUsPage();
+	}
+
+	public String getPageTitle() {
+		return wd.getTitle();
 	}
 
 }

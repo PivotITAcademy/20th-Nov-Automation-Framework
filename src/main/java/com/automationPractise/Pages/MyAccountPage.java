@@ -10,6 +10,7 @@ public class MyAccountPage extends TestBase {
 
 	public MyAccountPage() {
 		PageFactory.initElements(wd, this);
+		waitForDocumentCompleteState(15);
 	}
 
 	@FindBy(css = "#center_column p")
@@ -17,6 +18,10 @@ public class MyAccountPage extends TestBase {
 
 	public String getTextFromMessage() {
 		return welcomeMessageText.getText();
+	}
+
+	public String getPageTitle() {
+		return wd.getTitle();
 	}
 
 }

@@ -18,11 +18,12 @@ public class ContactUsPageTest extends TestBase {
 	public void setUp() {
 		intialsation();
 		homePage = new HomePage();
+		contactUsPage = homePage.clickContactUsBtn();
 	}
 
 	@Test
 	public void verifyUserCansubmitContactUsForm() {
-		contactUsPage = homePage.clickContactUsBtn();
+
 		contactUsPage.selectSubjectHeading();
 		contactUsPage.sendEmailInput(prop.getProperty("username"));
 		contactUsPage.enterOrderRef("12345");
@@ -33,6 +34,12 @@ public class ContactUsPageTest extends TestBase {
 		Assert.assertEquals(getTextFromSuccessMessageBanner, prop.getProperty("successMessageOnContactUsPage"),
 				"Message doesn't match");
 
+	}
+
+	@Test
+	public void verifyTitleOfTheContactUsPage() {
+		Assert.assertEquals(contactUsPage.getPageTitle(), prop.get("ContactUsPageTitle"),
+				"Contact Page title doesn't match");
 	}
 
 	@AfterMethod
