@@ -9,7 +9,6 @@ import java.util.Set;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.openqa.selenium.Alert;
-import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -149,6 +148,10 @@ public class Utils extends TestBase {
 
 	public void switchToFrame(WebElement element) {
 		wd.switchTo().frame(waitForElementToBeVisible(element, 10));
+	}
+
+	public static String getTextFromWebelement(WebElement element) {
+		return waitForElementToBeVisible(element, 30).getText();
 	}
 
 	public static void javascriptClick(WebElement element) {

@@ -27,27 +27,27 @@ public class LoginPage extends TestBase {
 	WebElement authenticationErrorMessage;
 
 	public void enterEmail(String email) {
-		emailInput.sendKeys(email);
+		Utils.sendData(emailInput, email);
 	}
 
 	public void enterPassword(String password) {
-		passwordInput.sendKeys(password);
+		Utils.sendData(passwordInput, password);
 	}
 
 	public MyAccountPage clickSignInBtn() {
-		signInBtn.click();
+		Utils.clickOnElement(signInBtn);
 		return new MyAccountPage();
 	}
 
 	public LoginPage configureSignIn() {
-		emailInput.sendKeys(Utils.generateRandomEmail());
-		passwordInput.sendKeys(Utils.generateRandomPassword());
-		signInBtn.click();
+		Utils.sendData(emailInput, Utils.generateRandomEmail());
+		Utils.sendData(passwordInput, Utils.generateRandomEmail());
+		Utils.clickOnElement(signInBtn);
 		return new LoginPage();
 	}
 
 	public String getAuthenticationErrorMessage() {
-		return authenticationErrorMessage.getText();
+		return Utils.getTextFromWebelement(authenticationErrorMessage);
 	}
 
 }

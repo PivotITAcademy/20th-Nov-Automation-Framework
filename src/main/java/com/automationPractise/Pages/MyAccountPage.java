@@ -5,6 +5,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import com.automationPractise.BasePackage.TestBase;
+import com.automationPractise.Utils.Utils;
 
 public class MyAccountPage extends TestBase {
 
@@ -17,7 +18,7 @@ public class MyAccountPage extends TestBase {
 	WebElement welcomeMessageText;
 
 	public String getTextFromMessage() {
-		return welcomeMessageText.getText();
+		return Utils.getTextFromWebelement(welcomeMessageText);
 	}
 
 	public String getPageTitle() {

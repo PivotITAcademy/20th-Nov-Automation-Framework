@@ -35,23 +35,24 @@ public class ContactUsPage extends TestBase {
 
 	public void sendEmailInput(String email) {
 		emailInput.sendKeys(email);
+		Utils.sendData(emailInput, email);
 	}
 
 	public void enterOrderRef(String orderRefe) {
-		orderRef.sendKeys(orderRefe);
+		Utils.sendData(orderRef, orderRefe);
 	}
 
 	public void enterMessage(String message) {
-		messageInput.sendKeys(message);
+		Utils.sendData(messageInput, message);
 	}
 
 	public void selectSubjectHeading() {
-		Utils.selectFromDropDownUsingIndex(subjectHeading, 15);
+		Utils.selectFromDropDownUsingIndex(subjectHeading, 1);
 
 	}
 
 	public String getTextFromSuccessMessage() {
-		return successMessage.getText();
+		return Utils.getTextFromWebelement(successMessage);
 	}
 
 	public ContactUsPage clickContactBtn() {

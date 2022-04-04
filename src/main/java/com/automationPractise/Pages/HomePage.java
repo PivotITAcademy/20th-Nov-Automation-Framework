@@ -27,12 +27,12 @@ public class HomePage extends TestBase {
 	WebElement storeInformation;
 
 	public ContactUsPage clickContactUsBtn() {
-		contactUsBtn.click();
+		Utils.clickOnElement(contactUsBtn);
 		return new ContactUsPage();
 	}
 
 	public LoginPage clickSignInBtn() {
-		signInBtn.click();
+		Utils.clickOnElement(signInBtn);
 		return new LoginPage();
 
 	}
@@ -44,7 +44,7 @@ public class HomePage extends TestBase {
 	public String getTextFromStoreInformation() {
 		Utils.moveToElement(storeInformation);
 		//Utils.scrollIntoViewUsingJavascript(storeInformation);
-		//Utils.sleep(10000);
+		Utils.sleep(10000);
 		return storeInformation.getText();
 	}
 
