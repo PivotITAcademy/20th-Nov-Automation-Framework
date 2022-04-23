@@ -30,7 +30,7 @@ public class MyAccountPageTest extends TestBase {
 
 	}
 
-	@Test(dataProvider ="signUpDataProvider" )
+	@Test(enabled = false,dataProvider ="signUpDataProvider" )
 	public void verifyUserCanLoginSuccessFully(String email,String password) {
 		loginpage = homepage.clickSignInBtn();
 

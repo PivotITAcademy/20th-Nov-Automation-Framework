@@ -2,6 +2,8 @@ package com.automationPractise.BasePackage;
 
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
@@ -10,11 +12,15 @@ import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -63,6 +69,16 @@ public class TestBase {
 
 		switch (browserName) {
 		case "chrome":
+			/*
+			 * DesiredCapabilities cap = new DesiredCapabilities();
+			 * cap.setBrowserName("chrome"); cap.setPlatform(Platform.WINDOWS);
+			 * 
+			 * ChromeOptions options = new ChromeOptions(); options.merge(cap);
+			 * 
+			 * String hubURL = "http://localhost:4444/wd/hub"; try { wd = new
+			 * RemoteWebDriver(new URL(hubURL), options); } catch (MalformedURLException e)
+			 * { // TODO Auto-generated catch block e.printStackTrace(); }
+			 */
 			WebDriverManager.chromedriver().setup();
 			wd = new ChromeDriver();
 			break;
@@ -71,6 +87,19 @@ public class TestBase {
 			wd = new FirefoxDriver();
 			break;
 		case "edge":
+
+			/*
+			 * DesiredCapabilities edgeCap = DesiredCapabilities.edge();
+			 * //edgeCap.setBrowserName("microsoft edge");
+			 * edgeCap.setPlatform(Platform.WINDOWS);
+			 * 
+			 * EdgeOptions edgeOptions = new EdgeOptions(); edgeOptions.merge(edgeCap);
+			 * 
+			 * String hubURL1 = "http://localhost:4444/wd/hub"; try { wd = new
+			 * RemoteWebDriver(new URL(hubURL1), edgeOptions); } catch
+			 * (MalformedURLException e) { // TODO Auto-generated catch block
+			 * e.printStackTrace(); }
+			 */
 			WebDriverManager.edgedriver().setup();
 			wd = new EdgeDriver();
 			break;

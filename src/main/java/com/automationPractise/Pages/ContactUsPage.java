@@ -34,7 +34,6 @@ public class ContactUsPage extends TestBase {
 	WebElement clickSubmitBtn;
 
 	public void sendEmailInput(String email) {
-		emailInput.sendKeys(email);
 		Utils.sendData(emailInput, email);
 	}
 
@@ -56,7 +55,6 @@ public class ContactUsPage extends TestBase {
 	}
 
 	public ContactUsPage clickContactBtn() {
-		// clickSubmitBtn.click();
 		Utils.clickOnElement(clickSubmitBtn);
 		return new ContactUsPage();
 	}
