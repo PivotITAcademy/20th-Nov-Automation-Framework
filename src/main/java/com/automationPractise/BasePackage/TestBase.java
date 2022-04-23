@@ -69,16 +69,7 @@ public class TestBase {
 
 		switch (browserName) {
 		case "chrome":
-			/*
-			 * DesiredCapabilities cap = new DesiredCapabilities();
-			 * cap.setBrowserName("chrome"); cap.setPlatform(Platform.WINDOWS);
-			 * 
-			 * ChromeOptions options = new ChromeOptions(); options.merge(cap);
-			 * 
-			 * String hubURL = "http://localhost:4444/wd/hub"; try { wd = new
-			 * RemoteWebDriver(new URL(hubURL), options); } catch (MalformedURLException e)
-			 * { // TODO Auto-generated catch block e.printStackTrace(); }
-			 */
+
 			WebDriverManager.chromedriver().setup();
 			wd = new ChromeDriver();
 			break;
@@ -88,18 +79,6 @@ public class TestBase {
 			break;
 		case "edge":
 
-			/*
-			 * DesiredCapabilities edgeCap = DesiredCapabilities.edge();
-			 * //edgeCap.setBrowserName("microsoft edge");
-			 * edgeCap.setPlatform(Platform.WINDOWS);
-			 * 
-			 * EdgeOptions edgeOptions = new EdgeOptions(); edgeOptions.merge(edgeCap);
-			 * 
-			 * String hubURL1 = "http://localhost:4444/wd/hub"; try { wd = new
-			 * RemoteWebDriver(new URL(hubURL1), edgeOptions); } catch
-			 * (MalformedURLException e) { // TODO Auto-generated catch block
-			 * e.printStackTrace(); }
-			 */
 			WebDriverManager.edgedriver().setup();
 			wd = new EdgeDriver();
 			break;
