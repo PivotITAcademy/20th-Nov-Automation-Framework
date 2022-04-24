@@ -16,9 +16,15 @@ public class ContactUsPageTest extends TestBase {
 
 	@BeforeMethod
 	public void setUp() {
+		// new setup
 		intialsation();
 		homePage = new HomePage();
 		contactUsPage = homePage.clickContactUsBtn();
+	}
+
+	@Test
+	public void failTest() {
+		Assert.assertEquals(true, false);
 	}
 
 	@Test(enabled = false)
