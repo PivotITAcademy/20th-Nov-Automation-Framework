@@ -24,7 +24,7 @@ public class HomePageTest extends TestBase {
 		Assert.assertEquals(homePage.getPageTitle(), prop.get("HomePageTitle"), "Home Page title doesn't match");
 	}
 
-	@Test
+	@Test(enabled = false)
 	public void verifyStoreInformationText() {
 		Assert.assertEquals(homePage.getTextFromStoreInformation(), prop.get("StoreInfromationText"),
 				"Text doesn't match");

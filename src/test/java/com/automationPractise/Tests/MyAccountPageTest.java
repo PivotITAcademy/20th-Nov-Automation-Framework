@@ -49,7 +49,7 @@ public class MyAccountPageTest extends TestBase {
 
 	}
 
-	@Test
+	@Test(enabled = false)
 	public void verifyTitleOfTheMyAccountPage() {
 		loginpage = homepage.clickSignInBtn();
 

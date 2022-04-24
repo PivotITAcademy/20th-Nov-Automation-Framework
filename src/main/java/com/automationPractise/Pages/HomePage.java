@@ -16,14 +16,14 @@ public class HomePage extends TestBase {
 		PageFactory.initElements(wd, this);
 		waitForDocumentCompleteState(10);
 	}
-	
+
 	@FindBy(id = "contact-link")
 	WebElement contactUsBtn;
 
 	@FindBy(css = "div.header_user_info")
 	WebElement signInBtn;
-	
-	@FindBy(css="#block_contact_infos h4")
+
+	@FindBy(css = "#block_contact_infos h4")
 	WebElement storeInformation;
 
 	public ContactUsPage clickContactUsBtn() {
@@ -36,14 +36,14 @@ public class HomePage extends TestBase {
 		return new LoginPage();
 
 	}
-	
+
 	public String getPageTitle() {
 		return wd.getTitle();
 	}
-	
+
 	public String getTextFromStoreInformation() {
 		Utils.moveToElement(storeInformation);
-		//Utils.scrollIntoViewUsingJavascript(storeInformation);
+		// Utils.scrollIntoViewUsingJavascript(storeInformation);
 		Utils.sleep(10000);
 		return storeInformation.getText();
 	}

@@ -128,6 +128,7 @@ public class TestBase {
 		wd.quit();
 	}
 
+	
 	public void waitForDocumentCompleteState(int timeOutInSeconds) {
 		new WebDriverWait(wd, 15).until((ExpectedCondition<Boolean>) v -> {
 			logger.info("Verifying page has loaded......");
@@ -143,5 +144,6 @@ public class TestBase {
 			}
 		});
 	}
+	 
 
 }

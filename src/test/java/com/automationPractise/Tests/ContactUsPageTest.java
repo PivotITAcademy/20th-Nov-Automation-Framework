@@ -21,7 +21,7 @@ public class ContactUsPageTest extends TestBase {
 		contactUsPage = homePage.clickContactUsBtn();
 	}
 
-	@Test()
+	@Test(enabled = false)
 	public void verifyUserCansubmitContactUsForm() {
 
 		contactUsPage.selectSubjectHeading();
