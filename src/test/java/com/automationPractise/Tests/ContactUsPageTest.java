@@ -33,6 +33,7 @@ public class ContactUsPageTest extends TestBase {
 		String getTextFromSuccessMessageBanner = contactUsPage.getTextFromSuccessMessage();
 		Assert.assertEquals(getTextFromSuccessMessageBanner, prop.getProperty("successMessageOnContactUsPage"),
 				"Message doesn't match");
+		System.out.println("Final message received after submission " + getTextFromSuccessMessageBanner);
 
 	}
 
