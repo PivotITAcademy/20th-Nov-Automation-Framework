@@ -13,7 +13,7 @@ public class MyAccountPage extends TestBase {
 		PageFactory.initElements(wd, this);
 		waitForDocumentCompleteState(15);
 		//I have added the below print statement
-		System.out.println("To obtain the welcome message");
+		System.out.println("To obtain the welcome messages");
 	}
 
 	@FindBy(css = "#center_column p")
