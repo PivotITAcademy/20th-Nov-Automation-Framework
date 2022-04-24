@@ -1,0 +1,11 @@
+pipeline {
+
+  stages {
+    stage('Build') {
+      steps {
+        bat "mvn help:effective-settings help:effective-pom clean -Dmaven.clean.failOnError=true"
+      }
+    }
+
+  }
+}
