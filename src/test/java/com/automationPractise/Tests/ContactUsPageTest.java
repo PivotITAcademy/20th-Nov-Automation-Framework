@@ -16,7 +16,6 @@ public class ContactUsPageTest extends TestBase {
 
 	@BeforeMethod
 	public void setUp() {
-		//Intialisation
 		intialsation();
 		homePage = new HomePage();
 		contactUsPage = homePage.clickContactUsBtn();
