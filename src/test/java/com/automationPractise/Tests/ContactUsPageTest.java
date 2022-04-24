@@ -24,7 +24,7 @@ public class ContactUsPageTest extends TestBase {
 
 	@Test
 	public void failTest() {
-		Assert.assertEquals(true, true);
+		Assert.assertEquals(true, false);
 	}
 
 	@Test(enabled = false)
