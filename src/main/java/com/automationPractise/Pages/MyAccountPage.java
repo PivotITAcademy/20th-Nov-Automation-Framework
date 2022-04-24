@@ -12,6 +12,8 @@ public class MyAccountPage extends TestBase {
 	public MyAccountPage() {
 		PageFactory.initElements(wd, this);
 		waitForDocumentCompleteState(15);
+		//I have added the below print statement
+		System.out.println("To obtain the welcome message");
 	}
 
 	@FindBy(css = "#center_column p")
@@ -19,10 +21,15 @@ public class MyAccountPage extends TestBase {
 
 	public String getTextFromMessage() {
 		return Utils.getTextFromWebelement(welcomeMessageText);
+		
+	
 	}
+	
+	
 
 	public String getPageTitle() {
 		return wd.getTitle();
+		
 	}
 
 }
